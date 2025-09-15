@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::section[@data-content]})}">
+<head>
+    <title>Messages</title>
+</head>
+<body>
+<section data-content>
+    <div class="container">
+        <div class="card">
+            <h1>Messages</h1>
+            <form th:action="@{/ui/messages}" method="post" th:object="${newMessage}">
+                <label>Sender ID:</label>
+                <input type="text" th:field="*{senderId}" />
+                <br />
+                <label>Recipient IDs (comma separated):</label>
+                <input type="text" name="recipientIdsRaw" />
+                <br />
+                <label>Body:</label>
+                <textarea th:field="*{body}"></textarea>
+                <br />
+                <button type="submit">Send</button>
+            </form>
+
+            <h2>For recipient: <span th:text="${recipientId}"></span></h2>
+            <ul>
+                <li th:each="m : ${messages}" class="message">
+                    <strong th:text="${m.body}"></strong>
+                    <div>from: <span th:text="${m.senderId}">anonymous</span></div>
+                    <div th:text="${m.createdAt}"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>

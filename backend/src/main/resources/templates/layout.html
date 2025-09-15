@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout (title, content)">
+<head>
+    <meta charset="UTF-8" />
+    <title th:replace="${title}">App</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- keep head minimal; page templates can supply a <title> which is injected above -->
+    <!-- Note: We avoid referencing ::head/::footer to prevent potential resolution loops -->
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <main>
+        <div th:replace="${content}"></div>
+    </main>
+</body>
+</html>

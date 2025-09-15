@@ -28,4 +28,21 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
 ```
 
+## specify
+```
+/specify 家族間でメッセージを共有したい。
+```
+
+## plan
+```
+/paln webアプリケーションとして作成をお願いします。
+・使用するサーバサイド技術：JDK21, spring-boot3.5, h2db, mybatis,
+・使用するクライアントサイド技術は：javascript, css
+・処理方式は、MPA（マルチページアプリケーション）
+```
+
+## tasks
+```
+/tasks
+```
 
